@@ -1,73 +1,70 @@
-# React + TypeScript + Vite
+# GIFs App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Aplicación React + TypeScript + Vite para buscar y mostrar GIFs usando la API de Giphy.
 
-Currently, two official plugins are available:
+## Demo en vivo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Visita la demo en Netlify:
 
-## React Compiler
+https://visionary-sopapillas-4227d6.netlify.app/
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Cómo usar la aplicación
 
-## Expanding the ESLint configuration
+1. Abre la aplicación.
+2. Usa la barra de búsqueda para escribir una palabra o frase.
+3. Presiona Enter o haz clic en el botón de búsqueda.
+4. Verás una lista de GIFs relacionados con tu búsqueda.
+5. Puedes ver búsquedas anteriores y reutilizarlas rápidamente.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Funcionalidades principales
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- Búsqueda de GIFs por texto.
+- Visualización de resultados en una galería.
+- Historial de búsquedas recientes.
+- Estructura basada en componentes y hooks personalizados.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## Cómo ejecutar el proyecto localmente
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+1. Clona el repositorio:
+
+```bash
+git clone <URL_DEL_REPOSITORIO>
+cd gifs-app
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+2. Instala las dependencias:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
 ```
+
+3. Inicia el servidor de desarrollo:
+
+```bash
+npm run dev
+```
+
+4. Abre el navegador en la dirección que muestra Vite, normalmente:
+
+```bash
+http://localhost:5173
+```
+
+## Estructura del proyecto
+
+- `src/`
+  - `GifsApp.tsx` - Componente principal de la aplicación.
+  - `main.tsx` - Punto de entrada de Vite.
+  - `index.css` - Estilos globales.
+  - `gifs/` - Lógica de búsqueda, API, componentes e interfaces.
+  - `shared/` - Componentes reutilizables como `SearchBar`.
+
+## Requisitos
+
+- Node.js 16+ recomendado.
+- npm 8+ o compatible.
+
+## Notas
+
+- Si quieres desplegar tu propia copia, asegúrate de configurar una clave de API de Giphy si decides usar la API real.
+- La demo pública está disponible en Netlify en el enlace anterior.

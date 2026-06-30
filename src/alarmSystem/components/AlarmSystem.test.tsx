@@ -2,6 +2,7 @@ import { fireEvent, render, screen } from "@testing-library/react";
 import { describe, expect, test } from "vitest";
 import { AlarmSystem } from "./AlarmSystem";
 
+
 describe('AlarmSystem', ()=>{
     test('Should render initial state as turned off', ()=>{
         
